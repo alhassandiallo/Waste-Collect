@@ -1,0 +1,25 @@
+.metadata/
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+node/
+
+# Python dependencies
+__pycache__/
+.venv/
+venv/
+*.pyc
+
+# Java dependencies
+target/
+.classpath
+.project
+.settings/
+
+# macOS system files
+.DS_Store
+
+# IDE files (e.g., VS Code)
+.vscode/

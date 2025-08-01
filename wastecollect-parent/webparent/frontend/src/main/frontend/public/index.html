@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Configuration de base pour le responsive design et l'encodage -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    
+    <!-- Métadonnées de l'application -->
+    <meta name="description" content="WasteCollect - Plateforme de gestion intelligente des déchets pour Conakry" />
+    <meta name="keywords" content="gestion déchets, collecte, Conakry, recyclage, environnement" />
+    <meta name="author" content="WasteCollect Team" />
+    
+    <!-- Titre de l'application -->
+    <title>WasteCollect - Gestion Intelligente des Déchets</title>
+    
+    <!-- Favicon et icônes pour différents appareils -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <!-- Manifest pour PWA (Progressive Web App) -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Bootstrap CSS pour le design responsive -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    		rel="stylesheet" 
+    	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+    		crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons pour les icônes -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    
+    <!-- Font Awesome pour les icônes supplémentaires -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+    />
+    
+    <!-- Google Fonts pour une meilleure typographie -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" 
+        rel="stylesheet"
+    >
+    
+    <!-- Styles personnalisés inline pour l'optimisation -->
+    <style>
+        /* Styles de base pour l'application */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Loader de démarrage de l'application */
+        #root {
+            min-height: 100vh;
+        }
+        
+        .app-loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+        
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Styles pour l'accessibilité */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus visible pour l'accessibilité clavier */
+        *:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+        
+        /* Responsive utilities */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+        }
+        
+        /* Theme colors CSS variables pour cohérence */
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Message pour les navigateurs sans JavaScript -->
+    <noscript>
+        <div class="alert alert-warning text-center" role="alert">
+            <h4>JavaScript requis</h4>
+            <p>Vous devez activer JavaScript pour utiliser WasteCollect.</p>
+            <p>Veuillez activer JavaScript dans votre navigateur et recharger la page.</p>
+        </div>
+    </noscript>
+    
+    <!-- Conteneur principal de l'application React -->
+    <div id="root">
+        <!-- Loader affiché pendant le chargement initial -->
+        <div class="app-loader">
+            <div class="loader-content">
+                <div class="loader-spinner"></div>
+                <h3>WasteCollect</h3>
+                <p>Chargement de la plateforme...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JavaScript Bundle avec Popper -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous">
+    </script>
+    
+    <!-- Configuration globale pour l'application -->
+    <script>
+        // Configuration API de base
+        window.WASTECOLLECT_CONFIG = {
+            API_BASE_URL: process.env.REACT_APP_API_URL || 'http://localhost:8080/api',
+            VERSION: '1.0.0',
+            ENVIRONMENT: process.env.NODE_ENV || 'development'
+        };
+        
+        // Détection des capacités du navigateur
+        window.BROWSER_CAPABILITIES = {
+            geolocation: 'geolocation' in navigator,
+            notifications: 'Notification' in window,
+            serviceWorker: 'serviceWorker' in navigator,
+            localStorage: typeof(Storage) !== 'undefined'
+        };
+        
+        // Gestion des erreurs globales JavaScript
+        window.addEventListener('error', function(e) {
+            console.error('Erreur JavaScript globale:', e.error);
+            // Ici, vous pourriez envoyer l'erreur à un service de monitoring
+        });
+        
+        // Gestion des promesses rejetées non capturées
+        window.addEventListener('unhandledrejection', function(e) {
+            console.error('Promise rejetée non gérée:', e.reason);
+            // Ici, vous pourriez envoyer l'erreur à un service de monitoring
+        });
+    </script>
+</body>
+</html>
