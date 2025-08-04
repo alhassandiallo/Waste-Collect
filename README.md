@@ -6,7 +6,6 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8.x-4479A1.svg?style=for-the-badge&logo=mysql)
 ![Maven](https://img.shields.io/badge/Maven-Apache_3.8.6-C71A36.svg?style=for-the-badge&logo=apache-maven)
 
-> One of the most crucial things in your open-source project is the README.md file. 
 
 ## 📌 Project Description
 
